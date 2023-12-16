@@ -6,12 +6,11 @@ function App() {
    const columnStyles = {
     display:'flex',
     border:'1px solid #000',
-    justifyContent:'center',
-    alignItems:'center',
+    justifyContent:'flex-start',
+    alignItems:'flex-start',
     marginTop: '10px',
-    marginLeft:'10px',
-    marginRight:'10px',
-    borderRadius:'4px'
+    borderRadius:'4px',
+    
     
    }
 
@@ -21,6 +20,7 @@ function App() {
       <div className="expense-table" style={columnStyles}>
       <Column categoryName="Grocery"/>
       <Column categoryName="Travel"/>
+      <Column categoryName="Other"/>
 
       </div>
       

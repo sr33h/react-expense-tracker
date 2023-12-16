@@ -7,8 +7,9 @@ function Column({ categoryName }) {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "baseline",
+    alignItems: "center",
     padding: "10px",
+    
   };
 
   const [sum, setSum] = useState(0);
@@ -31,19 +32,32 @@ function Column({ categoryName }) {
   return (
     <>
       <div style={columnStyles}>
-        <div style={{ display: "flex" }}>
-          <h4 style={{ display: "inline" }}>{categoryName}:</h4>
+          
+          <input 
+          style={
+            { textAlign:'center',
+              backgroundColor:'#1288ee',
+              color:'#fff',
+              fontWeight:'bolder',
+              width:'163px'
+         }}
+          value={categoryName}></input>
           <input
-            style={{ display: "inline", marginLeft: "10px" }}
-            placeholder="Enter the spent amount"
+        type="number"
+        placeholder="Enter Amount allocated"
+        style={{marginTop:'10px'}}></input>
+          <input
+            style={{ display: "inline",marginTop:'10px'}}
+            placeholder="Enter each spendings"
             value={expenseAmount}
             type="number"
             onKeyDown={(e) => handleEnter(e)}
             onChange={(e) => handleChange(e)}
           ></input>
-        </div>
+        
 
-        <h3 style={{ fontSize: 25, fontWeight: "bold" }}>Total : {sum}</h3>
+        <h3 style={{ fontSize: 15, fontWeight: "bold" }}>Actual Amount : {sum}</h3>
+        
         <ul>
           {spendings.map((amt, index) => (
             <li key={index}>

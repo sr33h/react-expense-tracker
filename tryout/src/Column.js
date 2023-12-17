@@ -77,6 +77,7 @@ function Column({ categoryName }) {
                value={categoryName}></input>
 
           <input
+          className="input is-small"
         type="number"
         placeholder="Enter Allocated Amount"
         style={{marginTop:'10px'}}
@@ -86,6 +87,7 @@ function Column({ categoryName }) {
         
 
           <input
+           className="input is-small"
             style={{ display: "inline",marginTop:'10px'}}
             placeholder="Enter each spendings"
             value={expenseAmount}
@@ -101,7 +103,8 @@ function Column({ categoryName }) {
             fontWeight: "bold",
             marginTop:'10px' }}>Total spent:  
             <span style={{
-              color:allocatedAmount-sum <0 ? 'red': '#44ef55',
+              color:allocatedAmount-sum <0 ? 'red':
+              allocatedAmount-sum === 0 ? '#343434' : '#44ef55',
               marginLeft:'10px'  
             }}>{sum}</span></h3>
             
@@ -111,7 +114,8 @@ function Column({ categoryName }) {
             { fontSize: 15, 
             fontWeight: "bold"}}>Balance: 
             <span style={{
-              color:allocatedAmount-sum <0 ? 'red': '#44ef55',
+              color:allocatedAmount-sum <0 ? 'red':
+              allocatedAmount-sum === 0 ? '#343434' :  '#44ef55',
               marginLeft:'10px'  
             }}>{allocatedAmount-sum}</span></h3>
 
@@ -167,8 +171,14 @@ function Spending({amount,onEdit,onDelete}){
     return (
         <>
         {spendingContent}
-        <button onClick={() => onDelete(amount.id)}>
-         X
+        <button 
+        style={{
+          backgroundColor:'#ee9999',
+          cursor:'pointer'
+        }}
+        
+        onClick={() => onDelete(amount.id)}>
+         <strong>X</strong>
         </button>
         
         </>

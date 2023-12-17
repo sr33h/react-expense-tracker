@@ -16,6 +16,8 @@ function App() {
 
     
       return <>
+
+      <nav></nav>
       
       <div className="expense-table" style={columnStyles}>
       <Column categoryName="Grocery"/>

@@ -98,23 +98,29 @@ function Column({ categoryName }) {
         <h3 
         style={
             { fontSize: 15, 
-            fontWeight: "bold" }}>Total spent:  
+            fontWeight: "bold",
+            marginTop:'10px' }}>Total spent:  
             <span style={{
               color:allocatedAmount-sum <0 ? 'red': '#44ef55',
               marginLeft:'10px'  
             }}>{sum}</span></h3>
             
-            <button 
-            className="button is-small is-primary is-rounded"
-            onClick={() => {
-                setSum(spendings.reduce( (t,s) => t+ +s.value,0)); 
-            }}>Re-Calculate</button>
+            
         <h3 
         style={
             { fontSize: 15, 
-            fontWeight: "bold",
-            color:allocatedAmount-sum <0 ? 'red': '#44ef55'
-             }}>Balance: {allocatedAmount-sum}</h3>
+            fontWeight: "bold"}}>Balance: 
+            <span style={{
+              color:allocatedAmount-sum <0 ? 'red': '#44ef55',
+              marginLeft:'10px'  
+            }}>{allocatedAmount-sum}</span></h3>
+
+<button 
+            className="button is-primary is-rounded"
+            style={{width:'70%',height:'25px',margin:'10px auto'}}
+            onClick={() => {
+                setSum(spendings.reduce( (t,s) => t+ +s.value,0)); 
+            }}>Re-Calculate</button>
         
         <ul>
           {spendings.map((amt) => (

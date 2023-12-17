@@ -39,7 +39,7 @@ function App() {
 
       <footer class="footer">
   <div className="content has-text-centered">
-    <p>[ Press <strong>Enter</strong> after entering a spending.]   </p>
+    <p>[ Press <strong>Re-Calculate</strong> after you've finished entering/modifying all spendings.]   </p>
   </div>
 </footer>
       

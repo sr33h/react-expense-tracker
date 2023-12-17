@@ -12,6 +12,10 @@ function Column({ categoryName }) {
     justifyContent: "center",
     alignItems: "flex-start",
     padding: "10px",
+    boxShadow:"0 2px 5px rgba(0,0,0,0.5)",
+    marginLeft:'10px',
+    borderRadius: '4px',
+    marginTop:'10px'
     
   };
 
@@ -101,6 +105,7 @@ function Column({ categoryName }) {
             }}>{sum}</span></h3>
             
             <button 
+            className="button is-small is-primary is-rounded"
             onClick={() => {
                 setSum(spendings.reduce( (t,s) => t+ +s.value,0)); 
             }}>Re-Calculate</button>

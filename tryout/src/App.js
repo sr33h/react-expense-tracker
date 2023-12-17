@@ -5,11 +5,13 @@ function App() {
 
    const columnStyles = {
     display:'flex',
-    border:'1px solid #000',
-    justifyContent:'flex-start',
+    
+    justifyContent:'center',
     alignItems:'flex-start',
     marginTop: '10px',
-    borderRadius:'4px',
+    flexWrap:'wrap'
+    
+    
     
     
    }
@@ -17,7 +19,16 @@ function App() {
     
       return <>
 
-      <nav></nav>
+<section className="hero is-primary">
+  <div className="hero-body">
+    <p className="title">
+      Expense Tracker
+    </p>
+    <p className="subtitle">
+      Track your spendings 
+    </p>
+  </div>
+</section>
       
       <div className="expense-table" style={columnStyles}>
       <Column categoryName="Grocery"/>
@@ -25,6 +36,12 @@ function App() {
       <Column categoryName="Other"/>
 
       </div>
+
+      <footer class="footer">
+  <div className="content has-text-centered">
+    <p>[ Press <strong>Enter</strong> after entering a spending.]   </p>
+  </div>
+</footer>
       
     
        

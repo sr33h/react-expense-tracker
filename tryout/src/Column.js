@@ -127,20 +127,28 @@ function Column({ categoryName }) {
 
 function Spending({amount,onEdit,onDelete}){
 
+  function handleChangeOfSpending(e){
+        
+    setSpendingValue(e.target.value);
+    onEdit({...amount,value:e.target.value})
+
+}
 
     function handleEnterOnSpending(e){
         if(e.keyCode === 13){
-           
-            onEdit({...amount,value:e.target.value})
-        }
+          onEdit({...amount,value:e.target.value})
+        }           
+        
     }
 
        const [spendingValue, setSpendingValue] = useState(amount.value);
        let spendingContent = (
             <input
                value={spendingValue}
-               onChange={(e) => {setSpendingValue(e.target.value)}}
+               onChange={(e) => {handleChangeOfSpending(e)}}
                onKeyDown={(e) => {handleEnterOnSpending(e)}}
+               
+            
                ></input>
         )
    
